@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prathmesh Gunjal | Portfolio Navbar</title>
-
-  <!-- Font Awesome for Icons -->
+  <title>Prathmesh Gunjal | Navbar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -30,7 +28,7 @@
     .navbar-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 18px 40px;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,53 +37,41 @@
     .menu-toggle {
       display: none;
       font-size: 24px;
-      background: none;
       color: #00f7ff;
+      background: none;
       border: none;
       cursor: pointer;
     }
 
     .nav-links {
-      list-style: none;
       display: flex;
-      gap: 30px;
-      margin: 0;
-      padding: 0;
+      gap: 25px;
+      list-style: none;
     }
 
-    .nav-links li {
-      display: inline;
-    }
-
-    .nav-links a {
+    .nav-links li a {
       color: #ffffff;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1rem;
-      padding: 6px 12px;
-      border-radius: 5px;
       display: flex;
       align-items: center;
-      transition: all 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: all 0.3s;
     }
 
     .nav-links a i {
-      margin-right: 8px;
-      transition: transform 0.3s ease;
+      margin-right: 6px;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
-      background: #00f7ff;
+      background-color: #00f7ff;
       color: #0a0c17;
-      box-shadow: 0 0 12px #00f7ff88;
-      transform: translateY(-2px);
+      box-shadow: 0 0 10px #00f7ff66;
     }
 
-    .nav-links a:hover i {
-      transform: rotate(8deg) scale(1.1);
-    }
-
+    /* WhatsApp Button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -99,9 +85,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
+      z-index: 1000;
       box-shadow: 0 0 15px #25d366aa;
-      transition: transform 0.3s ease, box-shadow 0.3s;
+      transition: transform 0.3s ease;
       text-decoration: none;
     }
 
@@ -118,43 +104,32 @@
 
       .nav-links {
         flex-direction: column;
-        gap: 10px;
-        background: #0a0c17;
+        background-color: #0a0c17;
         position: absolute;
         top: 60px;
-        right: 40px;
-        width: 200px;
+        right: 20px;
+        width: 220px;
         padding: 15px;
-        border-radius: 8px;
+        border-radius: 10px;
         display: none;
       }
 
       .nav-links.show {
         display: flex;
       }
-
-      .navbar-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .nav-links li {
-        width: 100%;
-      }
-
-      .nav-links a {
-        justify-content: flex-start;
-        width: 100%;
-      }
     }
   </style>
 </head>
-
 <body>
+
   <!-- Navbar -->
   <header class="navbar">
     <div class="navbar-container">
-      <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+      <!-- Logo (optional) -->
+      <!-- <div class="logo">Prathmesh</div> -->
+
+      <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+
       <ul class="nav-links" id="navMenu">
         <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="About.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
@@ -167,26 +142,27 @@
   </header>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/917058201092" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <a href="https://wa.me/917058201092" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JS: Active Link Highlight + Menu Toggle -->
+  <!-- Scripts -->
   <script>
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("navMenu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+
     // Highlight active link
-    const navLinks = document.querySelectorAll('.nav-link');
     const currentPage = location.pathname.split("/").pop();
-    navLinks.forEach(link => {
+    document.querySelectorAll('.nav-link').forEach(link => {
       if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
       }
     });
-
-    // Toggle menu on small screen
-    function toggleMenu() {
-      const navMenu = document.getElementById("navMenu");
-      navMenu.classList.toggle("show");
-    }
   </script>
+
 </body>
 </html>
