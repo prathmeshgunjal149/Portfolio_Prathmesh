@@ -1,12 +1,11 @@
 // JS/loadNavbar.js
 document.addEventListener("DOMContentLoaded", () => {
-  // Since nav.html is now in the same folder as index.html
   fetch("nav.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("navbar-placeholder").innerHTML = data;
 
-      // Highlight active page link
+      // ✅ Highlight current page link
       const navLinks = document.querySelectorAll(".nav-link");
       const currentPage = location.pathname.split("/").pop() || "index.html";
 
@@ -15,6 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
           link.classList.add("active");
         }
       });
+
+      // ✅ Toggle menu for mobile
+      const toggleBtn = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener("click", () => {
+          navMenu.classList.toggle("show");
+        });
+      }
     })
     .catch(err => console.error("Failed to load navbar:", err));
 });

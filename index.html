@@ -2,157 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prathmesh Gunjal | Full-Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prathmesh Gunjal | Responsive Navbar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #0d0f1a;
       color: #fff;
-      overflow-x: hidden;
+      padding-top: 65px;
     }
 
-    .hero {
+    .navbar {
+      background: #0a0c17;
+      box-shadow: 0 4px 12px #00f7ff33;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 80px 60px;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .hero-content {
-      max-width: 600px;
-    }
-
-    .hero-content h1 {
-      font-size: 3rem;
-      margin: 10px 0;
-      color: #fff;
-    }
-
-    .hero-content h3 {
-      font-size: 1.6rem;
-      color: #ccc;
-    }
-
-    .hero-content span {
-      color: #00f7ff;
+    .logo {
+      font-size: 1.5rem;
       font-weight: bold;
+      color: #00f7ff;
+      text-decoration: none;
     }
 
-    .hero-content p {
-      margin-top: 20px;
-      line-height: 1.6;
-      color: #bbb;
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #00f7ff;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    .social-icons {
+    .nav-links {
       display: flex;
       gap: 25px;
-      margin-top: 25px;
+      list-style: none;
+      margin: 0;
+      transition: all 0.3s ease;
     }
 
-    .social-icons a {
-      color: #00f7ff;
-      background: transparent;
-      border: 2px solid #00f7ff;
-      width: 45px;
-      height: 45px;
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      font-size: 1.4rem;
-      transition: all 0.4s ease-in-out;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
     }
 
-    .social-icons a:hover {
+    .nav-links a i {
+      margin-right: 6px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
       background: #00f7ff;
-      color: #0d0f1a;
-      box-shadow: 0 0 12px #00f7ff, 0 0 25px #00f7ff88;
-      transform: scale(1.1);
+      color: #0a0c17;
+      box-shadow: 0 0 10px #00f7ff66;
     }
 
-    .btn {
-      display: inline-block;
-      background: #00f7ff;
-      color: #000;
-      padding: 12px 24px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-      margin-top: 20px;
-    }
-
-    .btn:hover {
-      background: #0ff;
-      box-shadow: 0 0 15px #00f7ff;
-    }
-
-    .hero-img img {
-      max-width: 300px;
-      border-radius: 50%;
-      border: 6px solid #00f7ff;
-      box-shadow: 0 0 30px #00f7ff55;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-
-    .drop {
-      opacity: 0;
-      transform: translateY(-40px);
-      animation: dropIn 0.8s ease forwards;
-    }
-
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    .delay-4 { animation-delay: 0.8s; }
-    .delay-5 { animation-delay: 1s; }
-    .delay-6 { animation-delay: 1.2s; }
-    .delay-7 { animation-delay: 1.4s; }
-    .delay-8 { animation-delay: 1.6s; }
-    .delay-9 { animation-delay: 1.8s; }
-
-    @keyframes dropIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-40px) scale(0.95);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .fade-slide {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 1s ease-out forwards;
-      animation-delay: 0.4s;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
+    /* WhatsApp Floating Button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -168,7 +96,7 @@
       justify-content: center;
       z-index: 1000;
       box-shadow: 0 0 15px #25d366aa;
-      transition: transform 0.3s ease, box-shadow 0.3s;
+      transition: transform 0.3s ease;
       text-decoration: none;
     }
 
@@ -177,93 +105,85 @@
       box-shadow: 0 0 25px #25d366;
     }
 
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: #0a0c17;
-      border-top: 1px solid #00f7ff33;
-      margin-top: 50px;
-    }
-
-    .footer p {
-      color: #888;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .footer-social a {
-      color: #00f7ff;
-      font-size: 1.3rem;
-      transition: 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      color: #0ff;
-      transform: scale(1.2);
-    }
-
+    /* Responsive Styles */
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      .menu-toggle {
+        display: block;
       }
 
-      .hero-img {
-        margin-top: 30px;
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0a0c17;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+        width: 200px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links li {
+        margin-bottom: 10px;
+      }
+
+      .nav-links li:last-child {
+        margin-bottom: 0;
       }
     }
   </style>
 </head>
 
 <body>
-<div id="navbar-placeholder"></div>
-  <a href="https://wa.me/917058201092" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">Prathmesh</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navMenu">
+        <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="About.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="Skills.html" class="nav-link"><i class="fas fa-lightbulb"></i> Skills</a></li>
+        <li><a href="Resume.html" class="nav-link"><i class="fas fa-download"></i> Resume</a></li>
+        <li><a href="Project.html" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
+        <li><a href="Contact.html" class="nav-link"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/917058201092" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2 class="fade-slide">👋 Hello, it's Me</h2>
-      <h1 class="drop delay-2">Prathmesh Gunjal</h1>
-      <h3 class="drop delay-3">And I'm a <span>Full-Stack Developer</span></h3>
-      <p class="drop delay-4">Passionate about building modern web applications and solving real-world problems through technology.</p>
+  <!-- JS: Toggle Mobile Nav -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
 
-      <div class="social-icons">
-        <a href="https://github.com/prathmeshgunjal149" target="_blank" class="drop delay-5" aria-label="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/prathmesh-gunjal" target="_blank" class="drop delay-6" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:prathmeshgunjal149@gmail.com" class="drop delay-7" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
+      toggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
 
-      <a href="PRATHMESH-GUNJAL-CV-Resume[1].pdf" download class="btn drop delay-8">Download CV</a>
-    </div>
-
-    <div class="hero-img drop delay-9">
-      <img src="IMG_1813.PNG" alt="Prathmesh Gunjal" />
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2025 Prathmesh Gunjal. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://github.com/prathmeshgunjal149" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/prathmesh-gunjal" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:prathmeshgunjal149@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
-  </footer>
-<script src="loadnavbar.js"></script>
+      // Highlight current page
+      const current = location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
