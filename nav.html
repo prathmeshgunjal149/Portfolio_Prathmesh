@@ -10,7 +10,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #0d0f1a;
+      background-color: #0d0f1a;
       color: #fff;
       padding-top: 65px;
     }
@@ -47,7 +47,6 @@
       display: flex;
       gap: 25px;
       list-style: none;
-      transition: all 0.3s ease;
     }
 
     .nav-links li a {
@@ -72,7 +71,6 @@
       box-shadow: 0 0 10px #00f7ff66;
     }
 
-    /* WhatsApp Floating Button */
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -97,7 +95,6 @@
       box-shadow: 0 0 25px #25d366;
     }
 
-    /* Responsive Styles */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -112,6 +109,7 @@
         flex-direction: column;
         padding: 15px;
         border-radius: 10px;
+        box-shadow: 0 0 10px #00f7ff44;
       }
 
       .nav-links.show {
@@ -126,9 +124,9 @@
   <!-- Navbar -->
   <header class="navbar">
     <div class="navbar-container">
-      
+      <div style="font-weight: bold; color: #00f7ff;">Prathmesh</div>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
         <i class="fas fa-bars"></i>
       </button>
 
@@ -148,25 +146,23 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JS: Toggle Mobile Nav -->
+  <!-- ✅ JavaScript at the very end -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById("menuToggle");
-      const navMenu = document.getElementById("navMenu");
+    const toggleBtn = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-      toggle.addEventListener("click", () => {
-        navMenu.classList.toggle("show");
-      });
+    toggleBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
 
-      // Highlight current page
-      const current = location.pathname.split("/").pop();
-      document.querySelectorAll(".nav-link").forEach(link => {
-        if (link.getAttribute("href") === current) {
-          link.classList.add("active");
-        }
-      });
+    // Highlight current page
+    const links = document.querySelectorAll(".nav-link");
+    const currentPage = location.pathname.split("/").pop();
+    links.forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
     });
   </script>
-
 </body>
 </html>
