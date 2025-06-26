@@ -22,7 +22,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 9999;
     }
 
     .navbar-container {
@@ -32,6 +32,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00f7ff;
+      text-decoration: none;
     }
 
     .menu-toggle {
@@ -47,7 +54,8 @@
       display: flex;
       gap: 25px;
       list-style: none;
-      transition: all 0.3s ease;
+      margin: 0;
+      padding: 0;
     }
 
     .nav-links li a {
@@ -86,7 +94,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 10000;
       box-shadow: 0 0 15px #25d366aa;
       transition: transform 0.3s ease;
       text-decoration: none;
@@ -106,16 +114,26 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 65px;
         right: 20px;
         background: #0a0c17;
         flex-direction: column;
         padding: 15px;
         border-radius: 10px;
+        width: 200px;
+        box-shadow: 0 0 12px #00f7ff44;
       }
 
       .nav-links.show {
         display: flex;
+      }
+
+      .nav-links li {
+        margin-bottom: 10px;
+      }
+
+      .nav-links li:last-child {
+        margin-bottom: 0;
       }
     }
   </style>
@@ -124,9 +142,9 @@
 <body>
 
   <!-- Navbar -->
-  <header class="navbar">
+  <header class="navbar" role="navigation">
     <div class="navbar-container">
-      
+      <a href="index.html" class="logo">Prathmesh</a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
         <i class="fas fa-bars"></i>
@@ -154,12 +172,12 @@
       const toggle = document.getElementById("menuToggle");
       const navMenu = document.getElementById("navMenu");
 
-      toggle.addEventListener("click", () => {
+      toggle.addEventListener("click", function () {
         navMenu.classList.toggle("show");
       });
 
-      // Highlight current page
-      const current = location.pathname.split("/").pop();
+      // Highlight current page link
+      const current = location.pathname.split("/").pop() || "index.html";
       document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === current) {
           link.classList.add("active");
