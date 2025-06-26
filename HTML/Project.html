@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects - Prathmesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- External Navbar CSS -->
+  <link rel="stylesheet" href="../CSS/nav.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      padding-top: 70px;
+    }
+
+    .projects-section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .projects-section h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #00f7ff;
+      margin-bottom: 50px;
+      text-shadow: 0 0 10px #00f7ff90;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #181d35;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0, 247, 255, 0.15);
+      transition: 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00f7ff99;
+    }
+
+    .project-card h3 {
+      color: #00f7ff;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Navbar Include -->
+  <div id="navbar-placeholder"></div>
+
+  <section class="projects-section">
+    <h2><i class="fas fa-laptop-code"></i> My Projects</h2>
+    <div class="project-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3><i class="fas fa-tasks"></i> Exam Application System</h3>
+        <p><strong>Tech Stack:</strong> Node.js, Express.js, MySQL, EJS, Bootstrap, JWT</p>
+        <p>Secure, full-stack web app for managing online exams. Key operations include:</p>
+        <ul>
+          <li>Admin login and dashboard</li>
+          <li>CRUD operations for students, questions, exams</li>
+          <li>Student login and schedule selection</li>
+          <li>Dynamic question rendering and real-time timer</li>
+          <li>Auto-submit and result calculation</li>
+          <li>PDF result download with detailed performance report</li>
+        </ul>
+        <p>Highlights real-world full-stack development, RESTful architecture, and modular design with MVC pattern.</p>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3><i class="fas fa-id-badge"></i> Portfolio Website</h3>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+        <p>Responsive portfolio showcasing developer profile, skills, resume, and projects in a visually attractive format. Key features include:</p>
+        <ul>
+          <li>Sticky navbar and animated sections</li>
+          <li>Skills in interactive card layout</li>
+          <li>Downloadable resume in PDF format</li>
+          <li>Clean UI with light/dark mode capability</li>
+        </ul>
+        <p>Focused on UI/UX best practices, consistent branding, and cross-device compatibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS to Load Navbar Dynamically -->
+  <script src="../JS/loadnavbar.js"></script>
+</body>
+</html>

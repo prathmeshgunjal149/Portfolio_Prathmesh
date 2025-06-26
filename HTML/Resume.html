@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - Prathmesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f0f1f, #111132);
+      color: #fff;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #101322;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 0 12px #00f7ff44;
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      color: #00f7ff;
+      letter-spacing: 1px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00f7ff, 0 0 10px #00f7ff77;
+      }
+      to {
+        text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ffcc;
+      }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      background: #00f7ff;
+      color: #101322;
+      box-shadow: 0 0 8px #00f7ff88;
+    }
+
+    .resume-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .resume-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00f7ff;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .download-buttons {
+      margin-top: 20px;
+    }
+
+    .download-buttons a {
+      display: inline-block;
+      padding: 14px 24px;
+      margin: 12px;
+      background-color: #00f7ff;
+      color: #101322;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 0 8px #00f7ff99;
+    }
+
+    .download-buttons a:hover {
+      background-color: #00d0ff;
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00f7ffcc;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      padding: 30px;
+      background-color: #101322;
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 1px solid #222;
+    }
+
+    footer a {
+      color: #00f7ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .resume-section h2 {
+        font-size: 2rem;
+      }
+
+      .download-buttons a {
+        padding: 12px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+ <div id="navbar-placeholder"></div>
+  <section class="resume-section">
+    <h2>My Resume 📄</h2>
+    <div class="download-buttons">
+      <a href="/resume.pdf" download><i class="fas fa-file-pdf"></i> Download PDF</a>
+      <a href="/resume.docx" download><i class="fas fa-file-word"></i> Download Word</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Prathmesh Gunjal. All rights reserved.
+    <br>
+    <a href="mailto:prathmeshgunjal149@gmail.com"><i class="fas fa-envelope"></i> Email Me</a> |
+    <a href="https://github.com/prathmeshgunjal149" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </footer>
+  <script src="../JS/loadnavbar.js"></script>
+</body>
+</html>

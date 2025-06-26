@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills - Prathmesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .navbar {
+      background: #0f0f1f;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0, 247, 255, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: #00f7ff;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a i {
+      margin-right: 6px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #00f7ff;
+      color: #111;
+      box-shadow: 0 0 12px #00f7ff88;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin: 50px 0 30px;
+      font-size: 2.5rem;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff90;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto 80px;
+    }
+
+    .skill-card {
+      background: #1e1e2f;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 247, 255, 0.1);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 18px #00f7ff80;
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #00f7ff;
+      margin-bottom: 15px;
+    }
+
+    .skill-card p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .skill-card span {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    footer {
+      background: #0f0f1f;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 768px) {
+      h2.section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+ <div id="navbar-placeholder"></div>
+  <!-- Technical Skills -->
+  <h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+  <div class="skills-container">
+    <div class="skill-card"><i class="fab fa-html5"></i><p>HTML5</p><span>Structure and layout of web pages.</span></div>
+    <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS3</p><span>Styling and responsive design.</span></div>
+    <div class="skill-card"><i class="fab fa-js"></i><p>JavaScript</p><span>Client-side dynamic functionality.</span></div>
+    <div class="skill-card"><i class="fab fa-node-js"></i><p>Node.js</p><span>Server-side JavaScript environment.</span></div>
+    <div class="skill-card"><i class="fab fa-java"></i><p>Java</p><span>OOP language for cross-platform apps.</span></div>
+    <div class="skill-card"><i class="fas fa-database"></i><p>MySQL</p><span>Relational database system.</span></div>
+    <div class="skill-card"><i class="fas fa-plug"></i><p>JDBC</p><span>Java API for database connectivity.</span></div>
+    <div class="skill-card"><i class="fas fa-code"></i><p>EJS</p><span>Templating engine for Node.js.</span></div>
+    <div class="skill-card"><i class="fab fa-bootstrap"></i><p>Bootstrap</p><span>Responsive UI framework.</span></div>
+  </div>
+
+  <!-- Social Skills -->
+  <h2 class="section-title"><i class="fas fa-people-arrows"></i> Social Skills</h2>
+  <div class="skills-container">
+    <div class="skill-card"><i class="fas fa-comments"></i><p>Communication</p><span>Conveying ideas clearly and effectively.</span></div>
+    <div class="skill-card"><i class="fas fa-users"></i><p>Teamwork</p><span>Working well in collaborative settings.</span></div>
+    <div class="skill-card"><i class="fas fa-clock"></i><p>Time Management</p><span>Prioritizing tasks efficiently.</span></div>
+    <div class="skill-card"><i class="fas fa-sync-alt"></i><p>Adaptability</p><span>Adjusting to change effectively.</span></div>
+    <div class="skill-card"><i class="fas fa-user-tie"></i><p>Leadership</p><span>Inspiring and guiding teams.</span></div>
+    <div class="skill-card"><i class="fas fa-lightbulb"></i><p>Problem Solving</p><span>Analyzing and resolving issues.</span></div>
+  </div>
+
+  <!-- Tools & Platforms -->
+  <h2 class="section-title"><i class="fas fa-tools"></i> Tools & Platforms</h2>
+  <div class="skills-container">
+    <div class="skill-card"><i class="fas fa-code"></i><p>VS Code</p><span>Lightweight, customizable code editor.</span></div>
+    <div class="skill-card"><i class="fab fa-github"></i><p>Git & GitHub</p><span>Version control and collaboration.</span></div>
+    <div class="skill-card"><i class="fas fa-paper-plane"></i><p>Postman</p><span>API testing and development.</span></div>
+    <div class="skill-card"><i class="fas fa-server"></i><p>XAMPP</p><span>Local server environment for PHP/MySQL.</span></div>
+    <div class="skill-card"><i class="fas fa-database"></i><p>MySQL Workbench</p><span>Visual tool for MySQL databases.</span></div>
+    <div class="skill-card"><i class="fas fa-tools"></i><p>Chrome DevTools</p><span>Inspect and debug web pages.</span></div>
+    <div class="skill-card"><i class="fas fa-project-diagram"></i><p>Jira</p><span>Project tracking and agile planning.</span></div>
+    <div class="skill-card"><i class="fas fa-file-word"></i><p>MS Word</p><span>Document creation and editing.</span></div>
+    <div class="skill-card"><i class="fas fa-file-excel"></i><p>Excel</p><span>Spreadsheet and data analysis.</span></div>
+    <div class="skill-card"><i class="fas fa-code"></i><p>Eclipse</p><span>IDE for Java and web development.</span></div>
+    <div class="skill-card"><i class="fas fa-lightbulb"></i><p>IntelliJ IDEA</p><span>Smart IDE for Java and more.</span></div>
+  </div>
+
+  <footer>
+    &copy; 2025 Prathmesh Gunjal. All rights reserved.
+  </footer>
+  <script src="../JS/loadnavbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - Prathmesh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1f;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background: #101322;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0, 247, 255, 0.2);
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: #00f7ff;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: #00f7ff;
+      color: #0f0f1f;
+      box-shadow: 0 0 12px #00f7ff88;
+    }
+
+    .contact-section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #00f7ff;
+    }
+
+    .slogan {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #1d233a;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: #00f7ff;
+      color: #0f0f1f;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #00d2ff;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.5rem;
+    }
+
+    .social-icons a {
+      color: #00f7ff;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fff;
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      background: #101322;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .contact-number {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #00f7ff;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <section class="contact-section">
+    <h2>Get in Touch 📬</h2>
+    <div class="slogan">"Let's create something amazing together! Drop a message or call now."</div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="tel" placeholder="Your Contact Number" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-number">📞 +91 7058201092</div>
+
+    <div class="social-icons">
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://t.me"><i class="fab fa-telegram"></i></a>
+      <a href="https://wa.me"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Prathmesh Gunjal. All rights reserved.
+  </footer>
+  <script src="../JS/loadnavbar.js"></script>
+</body>
+</html>
