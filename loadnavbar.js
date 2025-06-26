@@ -1,13 +1,14 @@
 // JS/loadNavbar.js
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("../HTML/nav.html") // Or "../HTML/nav.html" depending on where your HTML files are located
+  // Since nav.html is now in the same folder as index.html
+  fetch("nav.html")
     .then(res => res.text())
     .then(data => {
       document.getElementById("navbar-placeholder").innerHTML = data;
 
       // Highlight active page link
       const navLinks = document.querySelectorAll(".nav-link");
-      const currentPage = location.pathname.split("/").pop();
+      const currentPage = location.pathname.split("/").pop() || "index.html";
 
       navLinks.forEach(link => {
         if (link.getAttribute("href") === currentPage) {
