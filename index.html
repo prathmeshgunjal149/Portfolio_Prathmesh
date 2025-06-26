@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prathmesh Gunjal | Responsive Navbar</title>
+  <title>Prathmesh Gunjal | Full-Stack Developer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -55,7 +55,6 @@
       gap: 25px;
       list-style: none;
       margin: 0;
-      transition: all 0.3s ease;
     }
 
     .nav-links li a {
@@ -105,7 +104,36 @@
       box-shadow: 0 0 25px #25d366;
     }
 
-    /* Responsive Styles */
+    /* Hero/Home Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #00f7ff;
+    }
+
+    .hero h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #aaa;
+    }
+
+    /* Responsive Menu */
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
@@ -120,7 +148,6 @@
         flex-direction: column;
         padding: 15px;
         border-radius: 10px;
-        width: 200px;
       }
 
       .nav-links.show {
@@ -129,10 +156,6 @@
 
       .nav-links li {
         margin-bottom: 10px;
-      }
-
-      .nav-links li:last-child {
-        margin-bottom: 0;
       }
     }
   </style>
@@ -144,11 +167,9 @@
   <header class="navbar">
     <div class="navbar-container">
       <a href="index.html" class="logo">Prathmesh</a>
-
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
         <i class="fas fa-bars"></i>
       </button>
-
       <ul class="nav-links" id="navMenu">
         <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="About.html" class="nav-link"><i class="fas fa-user"></i> About</a></li>
@@ -165,7 +186,14 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- JS: Toggle Mobile Nav -->
+  <!-- Home Section -->
+  <section class="hero">
+    <h1>Hi, I'm Prathmesh Gunjal 👋</h1>
+    <h3>Full-Stack Developer</h3>
+    <p>I create modern, responsive websites and full-stack applications using technologies like JavaScript, Node.js, MySQL, and more.</p>
+  </section>
+
+  <!-- JS: Toggle + Highlight -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.getElementById("menuToggle");
@@ -175,7 +203,6 @@
         navMenu.classList.toggle("show");
       });
 
-      // Highlight current page
       const current = location.pathname.split("/").pop() || "index.html";
       document.querySelectorAll(".nav-link").forEach(link => {
         if (link.getAttribute("href") === current) {
